@@ -11,7 +11,7 @@ logging.basicConfig(filename='backup.log', level=logging.INFO, format="%(asctime
 #Load Environment Variables
 try :
     dotenv.load_dotenv()
-    FOLDER_LOCATION = os.environ["DOSSIER_A_SAUVEGARDER"]
+    FOLDER_LOCATION = os.environ["FOLDER_TO_BACKUP"]
     AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
     AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
     AWS_REGION = os.environ["AWS_REGION"]

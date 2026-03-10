@@ -60,7 +60,7 @@ AWS_ACCESS_KEY_ID=your_access_key_here
 AWS_SECRET_ACCESS_KEY=your_secret_key_here
 AWS_REGION=eu-west-3
 AWS_BUCKET_NAME=your-bucket-name
-DOSSIER_A_SAUVEGARDER=/absolute/path/to/folder
+FOLDER_TO_BACKUP=/absolute/path/to/folder
 ```
 
 Where to find these values:
@@ -68,7 +68,7 @@ Where to find these values:
 - Region → chosen when creating the S3 bucket (ex: `eu-west-3` for Paris)
 - Bucket name → AWS Console > S3
 
-> ⚠️ The `.env` file is listed in `.gitignore` and will never be pushed to GitHub.
+> The `.env` file is listed in `.gitignore` and will never be pushed to GitHub.
 
 ---
 
