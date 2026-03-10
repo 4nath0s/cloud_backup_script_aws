@@ -16,7 +16,7 @@ try :
     AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
     AWS_REGION = os.environ["AWS_REGION"]
     AWS_BUCKET_NAME = os.environ["AWS_BUCKET_NAME"]
-    logging.info("global variables loaded succesfully")
+    logging.info("global variables loaded successfully")
 except:
     logging.exception("error loading global variables")
     exit(1)
@@ -60,7 +60,7 @@ def upload_to_S3(zip_location):
     # Upload the file
     try :
         s3.upload_file(zip_location, AWS_BUCKET_NAME, os.path.basename(zip_location))
-        logging.info("file loaded succesfully")
+        logging.info("file loaded successfully")
     except:
         logging.exception("error while loading file")
 
@@ -72,8 +72,8 @@ if __name__ == "__main__":
     #Delete the local archive after upload
     try:
         os.remove(save_name)
-        logging.info("zip file deleted succesfully")
+        logging.info("zip file deleted successfully")
     except:
-        logging.exception("zip file wasn't deleted succesfully")
+        logging.exception("zip file wasn't deleted successfully")
     
     
