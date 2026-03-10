@@ -22,7 +22,7 @@ except:
 
 def backup_creation(folder_localisation):
     if os.path.exists(folder_localisation):
-        save_file = "save" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+        save_file = "save_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
         shutil.make_archive(save_file, "zip", folder_localisation)
         logging.info("zip file created")
         return os.path.realpath(save_file + ".zip")
@@ -46,8 +46,12 @@ def upload_to_S3(zip_location):
 
 
 if __name__ == "__main__":
-    
     save_name = backup_creation(FOLDER_LOCATION)
     upload_to_S3(save_name)
+    try:
+        os.remove(save_name)
+        logging.info("zip file deleted succesfully")
+    except:
+        logging.exception("zip file wasn't deleted succesfully")
     
     
